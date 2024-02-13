@@ -1,0 +1,40 @@
+.order-form {
+  padding-top: 72px;
+  padding-bottom: 55px;
+}
+
+.form-wrap {
+  max-width: 636px;
+  margin: 0 auto;
+}
+
+input {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #CED4DA;
+  border-radius: 4px;
+  outline: none;
+  height: 38px;
+}
+.form-wrap button {
+  margin-left: 12px;
+  width: 156px;
+}
+.order__message {
+  display: none;
+  max-width: 636px ;
+  margin: 0 auto;
+  height: 300px;
+  background-color: #d5d9da;
+  text-align: center;
+  padding-top: 40px;
+  font-size: 48px;
+  font-weight: 700;
+  color: orangered;
+  border-radius: 20px;
+}
+
+input.ng-invalid.ng-touched,
+input.ng-invalid.ng-dirty {
+  border-color: red;
+}

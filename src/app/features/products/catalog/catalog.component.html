@@ -1,0 +1,13 @@
+<section class="products">
+  <div class="container">
+      <div class="products__title text-center fs-4 fw-bold mb-5">
+           {{title}}
+      </div>
+      <div class="row row-cols-1 gy-4 row-cols-sm-2 row-cols-md-3">
+          <product  class="col" *ngFor="let product of products" [product]="product"></product>
+      </div>
+      <div *ngIf="loading"  class="loader-bg">
+        <div class="loader"></div>
+      </div>
+  </div>
+</section>

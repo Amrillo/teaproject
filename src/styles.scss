@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+// @import '~bootstrap/dist/css/bootstrap.min.css'; 
+
+body {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+a {
+    background-color: transparent;
+}
+
+
+///   accordion styles 
+.ui-accordion .ui-accordion-header {
+    padding: 25px 53px 25px 23px;
+    color: white;
+  }
+  
+  .ui-icon {
+    background-image: url("assets/images/arrowdown.svg");
+    width: 17px;
+    height: 23px;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    right: 22px;
+  }
+  
+  .ui-state-hover .ui-icon,
+  .ui-state-focus .ui-icon,
+  .ui-button:hover .ui-icon,
+  .ui-button:focus .ui-icon {
+    transition: .3s;
+    background-image: url("assets/images/arrowdown.svg");
+  }
+  .ui-state-active .ui-icon, .ui-button:active .ui-icon {
+    background-image: url("assets/images/arrowup.svg");
+  }
+  .ui-widget-content {
+    border: none;
+  }
+  .ui-accordion-content {
+    height: fit-content!important;
+  }
+  .ui-accordion-header .ui-icon {
+    transition: none;
+    pointer-events: none;
+  }
+  
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

@@ -1,0 +1,108 @@
+<section class="order-form wow animate__backInLeft">
+  <div class="container">
+      <div class="order__wrap">
+          <div class="text-center fs-4 fw-bold mb-5">Сделать заказ</div>
+          <div *ngIf="formVisible; else showThanks">
+            <form action="#" class="form-wrap" method="post" [formGroup]="orderForm" >
+                <div class="row mb-3">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <label class="mb-2" for="name">Имя</label>
+                        <input class="input-name" type="text" name="name" id="name" formControlName="name">
+                        <div *ngIf="name?.invalid && (name?.touched || name?.dirty)">
+                            <div class="text-danger" *ngIf="name?.errors?.['required']">
+                                  Поля не должен быт пустым
+                            </div>
+                            <div class="text-danger" *ngIf="name?.errors?.['pattern']">
+                                Имя состоит только из букв
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <label class="mb-2" for="last_name">Фамилия</label>
+                        <input class="input-surname" type="text"  id="last_name" formControlName="last_name">
+                        <div *ngIf="lastName?.invalid && (lastName?.touched || lastName?.dirty)">
+                            <div class="text-danger" *ngIf="lastName?.errors?.['required']">
+                                  Поля не должен быт пустым
+                            </div>
+                            <div class="text-danger" *ngIf="lastName?.errors?.['pattern']">
+                                Имя состоит только из букв. Первое заглавное буква
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-8 col-md-4">
+                        <label class="mb-2" for="phone">Телефон</label>
+                        <input class="input-phone" type="tel" id="phone" name="phone" formControlName="phone">
+                        <div *ngIf="phone?.invalid && (phone?.touched || phone?.dirty)">
+                          <div class="text-danger" *ngIf="phone?.errors?.['required']">
+                                Поля не должен быт пустым
+                          </div>
+                          <div class="text-danger" *ngIf="phone?.errors?.['pattern']">
+                              Напишите правильный номер
+                          </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-sm-6">
+                        <label class="mb-2" for="country">Страна</label>
+                        <input class="input-country" type="text" name="name" id="country" formControlName="country">
+                        <div class="text-danger" *ngIf="country?.invalid && (country?.touched || country?.dirty) && country?.errors?.['required'] ">
+                                Поля не должен быт пустым
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="mb-2" for="surname">Индекс</label>
+                        <input class="input-index" type="text" name="name" id="index" formControlName="zip">
+                        <div class="text-danger" *ngIf="zip?.invalid && (zip?.touched || zip?.dirty)">
+                              <div *ngIf="zip?.errors?.['required']" >
+                                  Поля не должен быт пустым
+                              </div>
+                              <div *ngIf="zip?.errors?.['pattern']" >
+                                  Напишите правильный Индекс
+                              </div>
+                       </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-sm-6 mb-3">
+                        <label class="mb-2" for="adress">Адрес</label>
+                        <input class="input-adress" type="text" name="name" id="adress" formControlName="address">
+                        <div class="text-danger" *ngIf="address?.invalid && (address?.touched || address?.dirty)">
+                          <div *ngIf="address?.errors?.['required']" >
+                              Поля не должен быт пустым
+                          </div>
+                          <div *ngIf="address?.errors?.['pattern']" >
+                              Напишите правильный адрес
+                          </div>
+                   </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <label class="mb-2" for="product">Товар</label>
+                      <input class="input-product" type="text" name="name" id="product" formControlName="product">
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <label class="mb-2" for="comment">Комментарий к заказу</label>
+                      <textarea id="comment" name="w3review" rows="4" cols="50" formControlName="comment"></textarea>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center mb-3">
+                        <button id="btn-submit" [disabled]="isDisabled" class="btn bg-primary text-white py-2 border-0 hvr-pop" type="submit" (click)="clickIn()">Отправить</button>
+                    </div>
+                    <div class="col-4 text-center" *ngIf="showError">
+                         <p>Произошла ошибка. Попробуйте еще раз.</p>
+                    </div>
+                </div>
+            </form>
+          </div>
+          <ng-template #showThanks>
+            <div class="row text-center">
+                <div class="col text-success fs-2 fw-bold">
+                    Спасибо за заказ!
+                </div>
+            </div>
+        </ng-template>
+      </div>
+      <div class="order__message">Спасибо за заказ. Мы свяжемся с вами в ближайшее время!</div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="cardcontainer">
+      <div class="photo ">
+          <img class="text-center" [src]="product.image">
+      </div>
+      <div class="content">
+          <p class="txt4">Цена: {{product.price}}</p>
+          <p class="txt2">{{product.description}}</p>
+      </div>
+      <div class="footer text-center">
+          <button type="button" class="btn btn-danger" [routerLink]="'/order'" [queryParams]="{product : product.title}" >Купит</button>
+      </div>
+  </div>
+</div>

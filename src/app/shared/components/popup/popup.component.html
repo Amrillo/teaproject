@@ -1,0 +1,20 @@
+<ng-template #popup>
+  <div class="modal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <p>Посмотрите наши чайные коллекции</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="closePopup()">Нет, спасибо !!!</button>
+          <button type="button" [routerLink]="'/catalog'" class="btn btn-primary">Смотреть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+
+
+
+

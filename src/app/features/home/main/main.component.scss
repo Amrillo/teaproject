@@ -1,0 +1,39 @@
+.main__title {
+  margin-bottom: 70px;
+  font-size: 48px;
+  font-weight: 700;
+}
+.main__actions button {
+  width: 170px;
+}
+.main-background {
+  background-image: url("../../../../assets/images/slide1.png");
+  background-position: center center;
+  background-size: cover;
+  padding: 192px 0 192px 120px;
+}
+.questions {
+  padding-top: 72px;
+}
+.questions__accordion {
+  max-width: 856px;
+  margin: 0 auto;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .main__title {
+    font-size: 38px;
+}
+
+}
+@media screen and (max-width: 480px) {
+
+  .main__title {
+    font-size: 24px;
+    margin-bottom: 40px;
+   }
+}
+
+

@@ -1,0 +1,5 @@
+  <form class="d-flex" (submit)="onSearchSubmit()">
+    <input class="form-control me-2" type="search" placeholder="Поиск чая" aria-label="Search" [(ngModel)]="searchName" [ngModelOptions]="{standalone: true}">
+    <button class="btn btn-outline-primary w-50 me-2"  type="submit">Найти</button>
+    <button  *ngIf="searchName" class="btn btn-outline-danger w-50" (click)="reset()"  type="button">Сбросит</button>
+ </form>
